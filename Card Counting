@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+        //for when you're in Vegas
+            var count = 0;
+            let result = ""
+
+            function cc(card) {
+            if(!isNaN(card) && card >= 2 && card <= 6) {
+                count++;
+            };
+
+            if(!isNaN(card) && card >= 7 && card <= 9) {
+                count = count;
+            };
+
+            if(isNaN(card) || card == 10) {
+                count--;
+            }
+
+            if(count > 0) {
+                result = `${count} Bet`
+            }
+
+            else if(count <= 0) {
+                result = `${count} Hold`
+            }
+
+
+            return result;
+            }
+
+            cc("K"); cc(10); cc(10);
+            console.log(result);
+        </script>
+    </body>
+</html>
